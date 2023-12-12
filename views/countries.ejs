@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+<div class="container my-5">
+    <button type="button" onclick="window.location.href='/'" class="btn btn-outline-light">Back Home</button>
+</div>
+<div class="container-form d-flex flex-column align-items-center justify-content-center">
+<form  method="POST">
+    <div class="form-group mb-3">
+        <label for="country">Country Name</label>
+        <input type="text"  class="form-control mt-2" id="country" name="name" placeholder="Search by country name..." required>
+    </div>
+    <div class="buttons d-flex gap-4">
+        <button type="submit" class="btn btn-outline-light" formaction="/get-official-name">Show Official Name</button>
+        <button type="submit" class="btn btn-outline-light" formaction="/get-currency">Show Currency</button>
+        <button type="submit"  class="btn btn-outline-light" formaction="/get-region">Show Region</button>
+        <button type="submit" class="btn btn-outline-light" formaction="/get-capital">Show Capital</button>
+    </div>
+</form>    
+</div>
+
+<div class="container-cards d-flex justify-content-center mt-3">
+    <% if(locals.officialName) { %>
+        <div class="card border-0">
+            <h2 class="card-title">
+                The official name of <%= inputName %> is <%= officialName %></h1>
+            </h2>
+        </div>
+    <% } %>
+    <%if(locals.currency) { %>
+        <div class="card border-0">
+            <h2 class="card-title">
+                In <%= countryName %> the official currency is <%= currency %> with symbol <%= symbol %>
+            </h2>
+        </div>
+    <% } %>
+    <%if(locals.region) { %>
+        <div class="card border-0">
+            <h2 class="card-title">
+                <%=countryName%> is in <%= region %>
+            </h2>
+        </div>
+    <% } %>
+    <%if(locals.capital) { %>
+        <div class="card border-0">
+            <h2 class="card-title">
+                The capital of <%=countryName%> is  <%= capital %>
+            </h2>
+        </div>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>

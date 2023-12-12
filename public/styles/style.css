@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    background-image: url("/images/cover.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textBox{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin:0 auto;
+}
+.textBox p{
+    align-self: flex-end;
+    font-weight: 600;
+}
+.container-form{
+    height: 50vh;
+}
+.container-card{
+    height: 50vh;
+}
+.btn-outline-light:hover{
+    -webkit-box-shadow:0px 0px 21px 1px rgba(168,46,255,0.9);
+    -moz-box-shadow: 0px 0px 21px 1px rgba(168,46,255,0.9);
+    box-shadow: 0px 0px 21px 1px rgba(168,46,255,0.9);
+    background-color: rgba(168,46,255,0.9);
+    color: whitesmoke;
+}

@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+<div class="container-fluid d-flex flex-column">
+    <div class="textBox">
+        <% if(locals.author && locals.quote) { %>
+           <h1><%= quote %></h1>
+            <p>- <%= author %></p> 
+        <% } else { %>
+            <h1><%= error %></h1>
+        <% } %>
+    </div>
+    <button type="button" onclick="window.location.href='/countries'" class="btn btn-outline-light btnPrimary">Search countries</button>
+</div>
+<%- include("partials/footer.ejs") %>
